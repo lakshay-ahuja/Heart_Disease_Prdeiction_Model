@@ -13,4 +13,9 @@ In this project I'll explore various ML models for this task. My main tools will
 5. Use Scikit-Learn Models: Logistic Regression, K Neighbours Classifier, SVM(Support Vector Machine), Naive Bayes, Decision Tree and Random Forest. Each of these models has a fit() method, as well as predict() and score(). This uniformity will allow us to make an ensemble voting classifier.
 6. Make a simple Deep Learning Model with three fully-connected layers of 100 units, 100 units, 10 units, and ReLU activations. This last layer feeds into a single unit with sigmoid activation.
 7. Train the model and try it on test data set.
-8. Make a Voting Ensemble containing all the scikit-learn models(7) and set the threshold for votes accordingly. Check its perfomance.
+8. Make a Voting Ensemble containing all the scikit-learn models(7) and set the threshold for votes accordingly. Check its perfomance
+# Closing Remarks:
+After looking through some kaggle kernels on this problem, I noticed that many models achieved test accuracy of .885. This number was consistent across: Random forest, decision tree, k-nearest neighbor, SVM, logistic regression, deep and shallow NN, etc. The fact that so many classifiers got to the same 88.5% accuracy suggests that the Bayes error for this task may well be close to 11.5%.
+
+Finally, there is a lot of tuning to be done here. Each scikit-learn model has tons of parameters to tune, and we've mostly opted for the default values. Our Keras model could definitely be improved as well. We could also reduce false negatives by first reducing them on each individual model, and then using a voting ensemble which requires a supermajority to return a positive.
+<img width="1253" alt="Screenshot 2023-05-01 at 7 21 37 PM" src="https://user-images.githubusercontent.com/117161074/235467741-69662c49-5147-484f-9958-e4de68b95820.png">
